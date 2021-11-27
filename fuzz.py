@@ -14,8 +14,8 @@ def logo():
 
 def printf(str1, code, title):
     bcolors=["\033[32m","\033[31m","\033[33m","\033[0m"]
+    print(bcolors[code%100] + "[" + str(code) + "]" + str1 + bcolors[3])  # 200输出绿色 301输出红色 302输出黄色
     with open(logname, "a") as ff:
-        print(bcolors[code%100] + "[" + str(code) + "]" + str1 + bcolors[3])  # 200输出绿色 301输出红色 302输出黄色
         ff.write(str(code) + "," + str1 + "," + str(title) + "\n")  # 写入到日志中
         ff.close()
 
